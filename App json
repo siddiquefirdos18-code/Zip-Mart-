@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Zip-Mart",
+    "slug": "zip-mart",
+    "version": "1.0.0",
+    "platforms": ["android", "ios"],
+    "android": {
+      "package": "com.siddiquefirdos.zipmart"
+    }
+  }
+}
