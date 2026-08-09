@@ -1,7 +1,0 @@
-# yarn lockfile v1
-
-"@babel/core@^7.20.0":
-  version "7.20.0"
-  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.20.0.tgz#7b447831d1d867c48f22fd2d3856dbad88365ea6"
-  integrity sha512-sJlDRTWrcn60svC2AMIXjlqXCLClvTHVv4AfsVXEKxGMxw3ZDN8xRSXgCAO7PabAZglDOmy1WmXhJ3PBrJ1jLA==
-
