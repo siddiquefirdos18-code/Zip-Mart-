@@ -4,128 +4,184 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="nrZpCKigik4pF6KSIdxPaT9s6l5CgobdfkthAsfTr0Q">
-  <title>Zip Pithoragarh</title>
+  
+  <!-- Google Search Display Settings -->
+  <title>Zip India Mart | The Ultimate Mega Marketplace</title>
+  <meta name="description" content="Zip India Mart - Shop online for fashion, decor, kitchen accessories, bike parts, tools, electronics, and global mega products with festive offers.">
+  <meta name="keywords" content="Zip India Mart, Mega Online Store, Pithoragarh Shopping, Fashion, Electronics, Bike Parts">
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #ffffff; color: #000000; }
-    header { background: #000000; color: #ffffff; padding: 15px; text-align: center; font-size: 20px; font-weight: bold; }
-    .notice { background: #f1f1f1; color: #333; padding: 8px; text-align: center; font-size: 13px; border-bottom: 1px solid #ddd; }
+    :root { --primary: #2874f0; --accent: #ff9f00; --dark: #172337; --light: #f1f3f6; --red: #d32f2f; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background-color: var(--light); color: #212121; }
     
-    .search-container { padding: 10px; background: #000; display: flex; justify-content: center; gap: 5px; }
-    .search-container input { width: 70%; padding: 8px; border-radius: 4px; border: 1px solid #ccc; }
-    .search-container button { padding: 8px 12px; background: #e0e0e0; border: none; border-radius: 4px; cursor: pointer; }
+    /* Header & Navigation */
+    .header { background: var(--primary); color: #fff; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+    .header h1 { margin: 0; font-size: 24px; font-style: italic; font-weight: 900; letter-spacing: 0.5px; }
+    
+    /* Sale Banners */
+    .sale-banner { background: #ffe11b; color: #111; padding: 12px; text-align: center; font-weight: bold; font-size: 15px; border-bottom: 2px solid #ffd800; }
+    
+    /* Search Bar */
+    .search-bar { padding: 12px 15px; background: #fff; display: flex; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .search-bar input { width: 100%; max-width: 600px; padding: 10px 15px; border: 1px solid #ccc; border-radius: 2px; outline: none; font-size: 14px; }
 
-    .categories { display: flex; overflow-x: auto; padding: 10px; background: #111; gap: 10px; }
-    .cat-btn { background: #333; color: white; border: none; padding: 6px 12px; border-radius: 15px; white-space: nowrap; font-size: 12px; cursor: pointer; }
-    .cat-btn:hover { background: #555; }
+    /* Categories Scrollable Bar */
+    .cat-scroll { display: flex; background: #fff; padding: 10px; overflow-x: auto; gap: 15px; border-bottom: 1px solid #e0e0e0; white-space: nowrap; }
+    .cat-item { font-size: 13px; font-weight: 600; color: #333; cursor: pointer; padding: 6px 12px; background: #f1f3f6; border-radius: 4px; }
+    .cat-item:hover { background: var(--primary); color: #fff; }
+    
+    /* Sections */
+    .section { padding: 15px; background: #fff; margin-top: 10px; }
+    .section-title { font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #212121; border-bottom: 1px solid #f0f0f0; padding-bottom: 8px; }
+    
+    /* Product Grid */
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    @media(min-width: 600px) { .grid { grid-template-columns: repeat(4, 1fr); } }
+    
+    .card { border: 1px solid #e0e0e0; padding: 10px; border-radius: 4px; text-align: center; background: #fff; transition: 0.2s; }
+    .card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .card img { width: 100%; height: 130px; object-fit: contain; margin-bottom: 8px; }
+    .product-name { font-size: 14px; font-weight: 600; color: #212121; margin: 5px 0; }
+    .price { font-size: 16px; font-weight: bold; color: #388e3c; margin: 5px 0; }
+    .discount { font-size: 12px; color: #388e3c; background: #f0fdf4; padding: 2px 5px; display: inline-block; }
+    
+    .buy-btn { background: var(--accent); color: #fff; border: none; padding: 8px 12px; border-radius: 2px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 8px; }
+    .buy-btn:hover { background: #fb641b; }
 
-    .content { padding: 15px; max-width: 600px; margin: auto; }
-    .section-title { font-size: 18px; border-bottom: 2px solid #000; padding-bottom: 5px; margin-top: 20px; }
-    
-    .product-grid { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px; justify-content: space-between; }
-    .product-box { background: #fff; border: 1px solid #ddd; padding: 10px; width: 45%; border-radius: 6px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .product-box img { width: 100%; height: 100px; object-fit: cover; border-radius: 4px; }
-    
-    .price { color: #2e7d32; font-weight: bold; margin: 5px 0; }
-    .buy-btn { background: #a5d6a7; color: #000; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 5px; }
-    .buy-btn:hover { background: #81c784; }
-
-    .offers-banner { background: #000; color: #fff; padding: 15px; border-radius: 6px; margin-top: 20px; text-align: center; }
-    .checkout-section { background: #f9f9f9; border: 1px solid #ccc; padding: 15px; border-radius: 6px; margin-top: 20px; }
-    
-    .footer { background: #000; color: #fff; padding: 15px; font-size: 12px; text-align: center; margin-top: 30px; }
+    .footer { text-align: center; padding: 25px; background: var(--dark); color: white; margin-top: 20px; font-size: 13px; }
   </style>
 </head>
 <body>
 
-<header>Zip Pithoragarh</header>
-<div class="notice">Note: Items under 100 Rupees will have a 25 Rupees delivery charge.</div>
+<div class="sale-banner">⚡ EID / RAMADAN / DIWALI / DHANTERAS / HOLI & BIG BILLION MEGA SALE! ⚡</div>
 
-<div class="search-container">
-  <input type="text" placeholder="Search grocery, medicines, juices..." id="searchInput">
-  <button onclick="alert('Voice search activated!')">Mic</button>
+<div class="header">
+  <h1>Zip India Mart</h1>
 </div>
 
-<div class="categories">
-  <button class="cat-btn" onclick="location.href='#all'">All</button>
-  <button class="cat-btn" onclick="location.href='#grocery'">Grocery</button>
-  <button class="cat-btn" onclick="location.href='#medicines'">Medicines</button>
-  <button class="cat-btn" onclick="location.href='#haircare'">Hair Care</button>
-  <button class="cat-btn" onclick="location.href='#juices'">Fresh Juices</button>
+<div class="search-bar">
+  <input type="text" placeholder="Search millions of products (Decor, Kitchen, Fashion, Tools)...">
 </div>
 
-<div class="content" id="all">
+<!-- Quick Navigation Categories -->
+<div class="cat-scroll">
+  <div class="cat-item">Wedding & Decor</div>
+  <div class="cat-item">Kitchen & Sinks</div>
+  <div class="cat-item">Bathroom & Showers</div>
+  <div class="cat-item">Fashion & Watches</div>
+  <div class="cat-item">Bike Parts & Tools</div>
+  <div class="cat-item">Electronics & Appliances</div>
+  <div class="cat-item">Furniture & Beds</div>
+  <div class="cat-item">Grocery & Staples</div>
+</div>
 
-  <div class="offers-banner">
-    <h3>Festival and Combo Offers!</h3>
-    <p>Get extra 10 percent off on Combos above 200 Rupees!</p>
-  </div>
-
-  <div id="grocery" class="section-title">Grocery Corner</div>
-  <div class="product-grid">
-    <div class="product-box">
-      <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c" alt="Flour">
-      <p><strong>Flour</strong></p>
-      <div class="price">40 Rupees / kg</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Buy Now</button>
+<!-- Wedding & Festive Decor (Diya, Candles, Showpieces) -->
+<div class="section">
+  <div class="section-title">Wedding & Festive Decor (Diyas, Candles, Lights)</div>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c" alt="Decor">
+      <div class="product-name">Festival Diya & Scented Candles Kit</div>
+      <div class="price">399 Rupees</div>
+      <div class="discount">Festive Special</div>
+      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
     </div>
-    <div class="product-box">
-      <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c" alt="Rice">
-      <p><strong>Rice</strong></p>
-      <div class="price">50 Rupees / kg</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Buy Now</button>
-    </div>
-  </div>
-
-  <div id="medicines" class="section-title">Medicines Corner</div>
-  <div class="product-grid">
-    <div class="product-box">
-      <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae" alt="Medicine">
-      <p><strong>First Aid Kit</strong></p>
-      <div class="price">120 Rupees</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Buy Now</button>
-    </div>
-  </div>
-
-  <div id="haircare" class="section-title">Hair Care Corner</div>
-  <div class="product-grid">
-    <div class="product-box">
-      <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03" alt="Hair Care">
-      <p><strong>Herbal Hair Oil</strong></p>
-      <div class="price">90 Rupees</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Buy Now</button>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38" alt="Showpiece">
+      <div class="product-name">Wedding Decorative Showpiece Items</div>
+      <div class="price">899 Rupees</div>
+      <div class="discount">Top Rated</div>
+      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
     </div>
   </div>
+</div>
 
-  <div id="juices" class="section-title">Fresh Juices Corner</div>
-  <div class="product-grid">
-    <div class="product-box">
-      <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423" alt="Juice">
-      <p><strong>Fresh Fruit Juice</strong></p>
-      <div class="price">60 Rupees</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Buy Now</button>
+<!-- Kitchen Accessories (Sinks, Taps, Stoves, Ovens) -->
+<div class="section">
+  <div class="section-title">Kitchen Accessories (Sinks, Taps, Gas Stoves, Ovens)</div>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a" alt="Kitchen Sink">
+      <div class="product-name">Stainless Steel Kitchen Sink & Tap</div>
+      <div class="price">2,499 Rupees</div>
+      <div class="discount">Heavy Duty</div>
+      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078" alt="Gas Stove">
+      <div class="product-name">Automatic Gas Stove & Induction Cooktop</div>
+      <div class="price">3,299 Rupees</div>
+      <div class="discount">Mega Offer</div>
+      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
     </div>
   </div>
+</div>
 
-  <div class="checkout-section">
-    <h3>Payment Options</h3>
-    <p>Choose your payment method at checkout:</p>
-    <ul>
-      <li>Google Pay / PhonePe / UPI</li>
-      <li>Cash on Delivery</li>
-    </ul>
+<!-- Bathroom Accessories (Showers, Basins, Tanks) -->
+<div class="section">
+  <div class="section-title">Bathroom Accessories (Showers, Basins, Water Tanks)</div>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1584466977773-e625c37cdd50" alt="Basin">
+      <div class="product-name">Designer Wash Basin & Luxury Shower Set</div>
+      <div class="price">1,999 Rupees</div>
+      <div class="discount">Best Quality</div>
+      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101" alt="Water Tank">
+      <div class="product-name">1000 Litre Syntex Water Storage Tank</div>
+      <div class="price">6,500 Rupees</div>
+      <div class="discount">Direct Delivery</div>
+      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
+    </div>
   </div>
+</div>
 
-  <div style="margin-top: 30px; text-align: center;">
-    <h2>About Us</h2>
-    <p>Zip Pithoragarh - Your trusted local delivery partner.</p>
-    <h2>Founder</h2>
-    <p>Managed by <strong>Mohd.Fehed</strong></p>
+<!-- Fashion, Watches & Shoes -->
+<div class="section">
+  <div class="section-title">Fashion, Watches & Shoes</div>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Watch">
+      <div class="product-name">Luxury Hand Wrist Watch</div>
+      <div class="price">1,499 Rupees</div>
+      <div class="discount">Trending</div>
+      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105" alt="Clothes">
+      <div class="product-name">Designer Festive Outfits & Shoes</div>
+      <div class="price">2,199 Rupees</div>
+      <div class="discount">Special Deal</div>
+      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
+    </div>
   </div>
+</div>
 
+<!-- Bike Parts & Tools (T-Kit, Spanners, Spare Parts) -->
+<div class="section">
+  <div class="section-title">Bike Parts & Tools (T-Kit, Spanners, Spare Parts)</div>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758" alt="Tools">
+      <div class="product-name">Professional Mechanic T-Kit & Spanners Set</div>
+      <div class="price">1,299 Rupees</div>
+      <div class="discount">Pro Kit</div>
+      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193c" alt="Bike Parts">
+      <div class="product-name">Global Imported Bike & Scooter Spare Parts</div>
+      <div class="price">899 Rupees</div>
+      <div class="discount">Rare Parts</div>
+      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
+    </div>
+  </div>
 </div>
 
 <div class="footer">
-  Zip Pithoragarh | Managed by Mohd.Fehed
+  Zip India Mart | The Ultimate Global Megastore | Powered by Mohd.Fehed
 </div>
 
 </body>
