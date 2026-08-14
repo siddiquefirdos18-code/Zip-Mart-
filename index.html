@@ -1,20 +1,19 @@
-<!DOCTYPE html> <meta name="google-site-verification" content="
-<html lang="hi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zip Pithoragarh</title> google-site-verification" content="
+  <meta name="google-site-verification" content="nrZpCKigik4pF6KSIdxPaT9s6l5CgobdfkthAsfTr0Q" />
+  <title>Zip Pithoragarh</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #ffffff; color: #000000; }
     header { background: #000000; color: #ffffff; padding: 15px; text-align: center; font-size: 20px; font-weight: bold; }
     .notice { background: #f1f1f1; color: #333; padding: 8px; text-align: center; font-size: 13px; border-bottom: 1px solid #ddd; }
     
-    /* Search Bar with Mic */
     .search-container { padding: 10px; background: #000; display: flex; justify-content: center; gap: 5px; }
     .search-container input { width: 70%; padding: 8px; border-radius: 4px; border: 1px solid #ccc; }
     .search-container button { padding: 8px 12px; background: #e0e0e0; border: none; border-radius: 4px; cursor: pointer; }
 
-    /* Categories / Corners */
     .categories { display: flex; overflow-x: auto; padding: 10px; background: #111; gap: 10px; }
     .cat-btn { background: #333; color: white; border: none; padding: 6px 12px; border-radius: 15px; white-space: nowrap; font-size: 12px; cursor: pointer; }
     .cat-btn:hover { background: #555; }
@@ -26,7 +25,6 @@
     .product-box { background: #fff; border: 1px solid #ddd; padding: 10px; width: 45%; border-radius: 6px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
     .product-box img { width: 100%; height: 100px; object-fit: cover; border-radius: 4px; }
     
-    /* Light Green Color for Buy/Price as requested */
     .price { color: #2e7d32; font-weight: bold; margin: 5px 0; }
     .buy-btn { background: #a5d6a7; color: #000; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold; cursor: pointer; width: 100%; margin-top: 5px; }
     .buy-btn:hover { background: #81c784; }
@@ -40,15 +38,13 @@
 <body>
 
 <header>Zip Pithoragarh</header>
-<div class="notice">Note: Items under ₹100 will have a ₹25 delivery charge.</div>
+<div class="notice">Note: Items under 100 Rupees will have a 25 Rupees delivery charge.</div>
 
-<!-- Search Bar with Voice/Mic simulation -->
 <div class="search-container">
   <input type="text" placeholder="Search grocery, medicines, juices..." id="searchInput">
-  <button onclick="alert('Voice search activated!')">🎤 Mic</button>
+  <button onclick="alert('Voice search activated!')">Mic</button>
 </div>
 
-<!-- Categories / Corners -->
 <div class="categories">
   <button class="cat-btn" onclick="location.href='#all'">All</button>
   <button class="cat-btn" onclick="location.href='#grocery'">Grocery</button>
@@ -59,73 +55,66 @@
 
 <div class="content" id="all">
 
-  <!-- Offers & Combos Banner -->
   <div class="offers-banner">
-    <h3>🔥 Festival & Combo Offers!</h3>
-    <p>Get extra 10% off on Combos above ₹200!</p>
+    <h3>Festival and Combo Offers!</h3>
+    <p>Get extra 10 percent off on Combos above 200 Rupees!</p>
   </div>
 
-  <!-- Grocery Corner -->
-  <div id="grocery" class="section-title">🛒 Grocery Corner</div>
+  <div id="grocery" class="section-title">Grocery Corner</div>
   <div class="product-grid">
     <div class="product-box">
-      <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c" alt="Aata">
-      <p><strong>Aata (Flour)</strong></p>
-      <div class="price">₹40 / kg</div>
+      <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c" alt="Flour">
+      <p><strong>Flour</strong></p>
+      <div class="price">40 Rupees / kg</div>
       <button class="buy-btn" onclick="alert('Added to Cart!')">Buy Now</button>
     </div>
     <div class="product-box">
       <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c" alt="Rice">
-      <p><strong>Rice (चावल)</strong></p>
-      <div class="price">₹50 / kg</div>
+      <p><strong>Rice</strong></p>
+      <div class="price">50 Rupees / kg</div>
       <button class="buy-btn" onclick="alert('Added to Cart!')">Buy Now</button>
     </div>
   </div>
 
-  <!-- Medicines Corner -->
-  <div id="medicines" class="section-title">💊 Medicines Corner</div>
+  <div id="medicines" class="section-title">Medicines Corner</div>
   <div class="product-grid">
     <div class="product-box">
       <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae" alt="Medicine">
       <p><strong>First Aid Kit</strong></p>
-      <div class="price">₹120</div>
+      <div class="price">120 Rupees</div>
       <button class="buy-btn" onclick="alert('Added to Cart!')">Buy Now</button>
     </div>
   </div>
 
-  <!-- Hair Care Corner -->
-  <div id="haircare" class="section-title">🧴 Hair Care Corner</div>
+  <div id="haircare" class="section-title">Hair Care Corner</div>
   <div class="product-grid">
     <div class="product-box">
       <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03" alt="Hair Care">
       <p><strong>Herbal Hair Oil</strong></p>
-      <div class="price">₹90</div>
+      <div class="price">90 Rupees</div>
       <button class="buy-btn" onclick="alert('Added to Cart!')">Buy Now</button>
     </div>
   </div>
 
-  <!-- Fresh Juices Corner -->
-  <div id="juices" class="section-title">🧃 Fresh Juices Corner</div>
+  <div id="juices" class="section-title">Fresh Juices Corner</div>
   <div class="product-grid">
     <div class="product-box">
       <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423" alt="Juice">
       <p><strong>Fresh Fruit Juice</strong></p>
-      <div class="price">₹60</div>
+      <div class="price">60 Rupees</div>
       <button class="buy-btn" onclick="alert('Added to Cart!')">Buy Now</button>
     </div>
   </div>
 
-  <!-- Checkout / Payment Options -->
   <div class="checkout-section">
-    <h3>💳 Payment Options</h3>
+    <h3>Payment Options</h3>
     <p>Choose your payment method at checkout:</p>
     <ul>
       <li>Google Pay / PhonePe / UPI</li>
-      <li>Cash on Delivery (COD)</li>
+      <li>Cash on Delivery</li>
     </ul>
   </div>
 
-  <!-- About & Founder -->
   <div style="margin-top: 30px; text-align: center;">
     <h2>About Us</h2>
     <p>Zip Pithoragarh - Your trusted local delivery partner.</p>
