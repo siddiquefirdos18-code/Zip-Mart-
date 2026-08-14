@@ -3,186 +3,299 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="nrZpCKigik4pF6KSIdxPaT9s6l5CgobdfkthAsfTr0Q">
-  
-  <!-- Google Search Display Settings -->
   <title>Zip India Mart | The Ultimate Mega Marketplace</title>
-  <meta name="description" content="Zip India Mart - Shop online for fashion, decor, kitchen accessories, bike parts, tools, electronics, and global mega products with festive offers.">
-  <meta name="keywords" content="Zip India Mart, Mega Online Store, Pithoragarh Shopping, Fashion, Electronics, Bike Parts">
-
   <style>
-    :root { --primary: #2874f0; --accent: #ff9f00; --dark: #172337; --light: #f1f3f6; --red: #d32f2f; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background-color: var(--light); color: #212121; }
+    :root { --primary: #2874f0; --accent: #ff9f00; --light: #f1f3f6; --dark: #172337; }
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: var(--light); color: #212121; }
     
-    /* Header & Navigation */
-    .header { background: var(--primary); color: #fff; padding: 15px 25px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-    .header h1 { margin: 0; font-size: 24px; font-style: italic; font-weight: 900; letter-spacing: 0.5px; }
+    .header { background: var(--primary); color: #fff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-style: italic; font-size: 20px; }
     
-    /* Sale Banners */
-    .sale-banner { background: #ffe11b; color: #111; padding: 12px; text-align: center; font-weight: bold; font-size: 15px; border-bottom: 2px solid #ffd800; }
+    /* Search Bar on Top of Banner with Camera/Gallery */
+    .top-search-container { background: #fff; padding: 10px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; gap: 10px; }
+    .search-input-box { flex: 1; display: flex; align-items: center; border: 1px solid #ccc; border-radius: 4px; padding: 5px 10px; background: #fff; }
+    .search-input-box input { border: none; outline: none; width: 100%; font-size: 14px; }
+    .search-icons { display: flex; gap: 10px; font-size: 18px; cursor: pointer; color: #555; }
     
-    /* Search Bar */
-    .search-bar { padding: 12px 15px; background: #fff; display: flex; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .search-bar input { width: 100%; max-width: 600px; padding: 10px 15px; border: 1px solid #ccc; border-radius: 2px; outline: none; font-size: 14px; }
+    /* Recent Searches & Clear All */
+    .recent-box { background: #fff; padding: 8px 15px; font-size: 12px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+    .clear-btn { color: red; cursor: pointer; font-weight: bold; }
 
-    /* Categories Scrollable Bar */
-    .cat-scroll { display: flex; background: #fff; padding: 10px; overflow-x: auto; gap: 15px; border-bottom: 1px solid #e0e0e0; white-space: nowrap; }
-    .cat-item { font-size: 13px; font-weight: 600; color: #333; cursor: pointer; padding: 6px 12px; background: #f1f3f6; border-radius: 4px; }
-    .cat-item:hover { background: var(--primary); color: #fff; }
-    
-    /* Sections */
-    .section { padding: 15px; background: #fff; margin-top: 10px; }
-    .section-title { font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #212121; border-bottom: 1px solid #f0f0f0; padding-bottom: 8px; }
-    
-    /* Product Grid */
+    /* Sliding Banners */
+    .slider-container { width: 100%; overflow: hidden; border-bottom: 2px solid #ddd; background: #000; }
+    .slider-track { display: flex; transition: transform 0.6s ease-in-out; width: 1000%; }
+    .slide-banner { width: 10%; flex-shrink: 0; }
+    .slide-banner img { width: 100%; height: 180px; object-fit: cover; display: block; }
+
+    /* Categories Scroll */
+    .cat-scroll { display: flex; background: #fff; padding: 10px; overflow-x: auto; gap: 12px; border-bottom: 1px solid #ddd; white-space: nowrap; }
+    .cat-item { cursor: pointer; padding: 6px 12px; background: #f1f3f6; border-radius: 4px; font-size: 13px; font-weight: 600; color: #333; }
+    .cat-item:hover, .cat-item.active { background: var(--primary); color: #fff; }
+
+    /* Products Grid */
+    .section { padding: 15px; }
     .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
     @media(min-width: 600px) { .grid { grid-template-columns: repeat(4, 1fr); } }
-    
-    .card { border: 1px solid #e0e0e0; padding: 10px; border-radius: 4px; text-align: center; background: #fff; transition: 0.2s; }
-    .card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    .card img { width: 100%; height: 130px; object-fit: contain; margin-bottom: 8px; }
-    .product-name { font-size: 14px; font-weight: 600; color: #212121; margin: 5px 0; }
-    .price { font-size: 16px; font-weight: bold; color: #388e3c; margin: 5px 0; }
-    .discount { font-size: 12px; color: #388e3c; background: #f0fdf4; padding: 2px 5px; display: inline-block; }
-    
-    .buy-btn { background: var(--accent); color: #fff; border: none; padding: 8px 12px; border-radius: 2px; cursor: pointer; font-weight: bold; width: 100%; margin-top: 8px; }
-    .buy-btn:hover { background: #fb641b; }
+    .card { background: #fff; border: 1px solid #e0e0e0; padding: 10px; text-align: center; border-radius: 4px; }
+    .card img { width: 100%; height: 120px; object-fit: contain; margin-bottom: 8px; }
+    .price { font-weight: bold; color: #388e3c; margin: 5px 0; }
+    .buy-btn { background: var(--accent); color: #fff; border: none; padding: 8px; width: 100%; font-weight: bold; border-radius: 2px; cursor: pointer; }
 
-    .footer { text-align: center; padding: 25px; background: var(--dark); color: white; margin-top: 20px; font-size: 13px; }
+    /* Bottom Profile, Cart & Orders Section */
+    .bottom-panel { background: var(--dark); color: #fff; padding: 20px; margin-top: 20px; font-size: 14px; }
+    .coupon-section { background: #232f3e; padding: 10px; margin-bottom: 15px; border-radius: 4px; }
+    .coupon-section input { padding: 6px; width: 60%; border: none; border-radius: 2px; }
+    .coupon-section button { padding: 6px 12px; background: var(--accent); border: none; font-weight: bold; color: #fff; cursor: pointer; border-radius: 2px; }
   </style>
 </head>
 <body>
 
-<div class="sale-banner">⚡ EID / RAMADAN / DIWALI / DHANTERAS / HOLI & BIG BILLION MEGA SALE! ⚡</div>
-
 <div class="header">
-  <h1>Zip India Mart</h1>
+  <span>Zip India Mart</span>
+  <span style="font-size: 14px; cursor: pointer;" onclick="alert('Profile Opened')">👤 Profile</span>
 </div>
 
-<div class="search-bar">
-  <input type="text" placeholder="Search millions of products (Decor, Kitchen, Fashion, Tools)...">
+<!-- Search Bar with Camera & Gallery Options -->
+<div class="top-search-container">
+  <div class="search-input-box">
+    <input type="text" id="searchInput" onkeyup="handleSearch(event)" placeholder="Search AC, Fans, Makeup, Skincare, Blankets, Bags...">
+    <div class="search-icons">
+      <!-- Gallery Upload -->
+      <label title="Upload from Gallery" style="cursor: pointer;">🖼️<input type="file" accept="image/*" style="display:none" onchange="searchByImage(this)"></label>
+      <!-- Camera Capture -->
+      <label title="Capture from Camera" style="cursor: pointer;">📷<input type="file" accept="image/*" capture="environment" style="display:none" onchange="searchByImage(this)"></label>
+    </div>
+  </div>
 </div>
 
-<!-- Quick Navigation Categories -->
+<!-- Recent Searches & Clear All -->
+<div class="recent-box">
+  <span id="recentText">Recent Searches: None</span>
+  <span class="clear-btn" onclick="clearAllSearches()">Clear All 🗑️</span>
+</div>
+
+<!-- Sliding Banners with Photos -->
+<div class="slider-container">
+  <div class="slider-track" id="sliderTrack">
+    <div class="slide-banner"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" alt="Makeup Sale"></div>
+    <div class="slide-banner"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03" alt="Skincare Sale"></div>
+    <div class="slide-banner"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e" alt="AC & Coolers"></div>
+    <div class="slide-banner"><img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2" alt="Blankets"></div>
+    <div class="slide-banner"><img src="https://images.unsplash.com/photo-1581557991964-125469da3b8a" alt="Luggage"></div>
+    <div class="slide-banner"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Stationery"></div>
+    <div class="slide-banner"><img src="https://images.unsplash.com/photo-1596464971569-34b7f583e7cf" alt="Baby Care"></div>
+    <div class="slide-banner"><img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27" alt="Innerwear"></div>
+    <div class="slide-banner"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Footwear"></div>
+    <div class="slide-banner"><img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da" alt="Mega Sale"></div>
+  </div>
+</div>
+
+<!-- Categories -->
 <div class="cat-scroll">
-  <div class="cat-item">Wedding & Decor</div>
-  <div class="cat-item">Kitchen & Sinks</div>
-  <div class="cat-item">Bathroom & Showers</div>
-  <div class="cat-item">Fashion & Watches</div>
-  <div class="cat-item">Bike Parts & Tools</div>
-  <div class="cat-item">Electronics & Appliances</div>
-  <div class="cat-item">Furniture & Beds</div>
-  <div class="cat-item">Grocery & Staples</div>
+  <div class="cat-item active" onclick="filterCat('all', this)">All Items</div>
+  <div class="cat-item" onclick="filterCat('beauty', this)">Makeup & Skincare</div>
+  <div class="cat-item" onclick="filterCat('cooling', this)">AC, Coolers & Fans</div>
+  <div class="cat-item" onclick="filterCat('blankets', this)">Blankets & Rajai</div>
+  <div class="cat-item" onclick="filterCat('bags', this)">Trolley Bags & Purses</div>
+  <div class="cat-item" onclick="filterCat('stationery', this)">Stationery & Frames</div>
+  <div class="cat-item" onclick="filterCat('innerwear', this)">Innerwear</div>
+  <div class="cat-item" onclick="filterCat('baby', this)">Baby Care & Food</div>
 </div>
 
-<!-- Wedding & Festive Decor (Diya, Candles, Showpieces) -->
+<!-- Products Grid -->
 <div class="section">
-  <div class="section-title">Wedding & Festive Decor (Diyas, Candles, Lights)</div>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c" alt="Decor">
-      <div class="product-name">Festival Diya & Scented Candles Kit</div>
-      <div class="price">399 Rupees</div>
-      <div class="discount">Festive Special</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
+  <div class="grid" id="productGrid">
+    <!-- Beauty, Makeup, Hair, Body & Hand Care (Big Brands) -->
+    <div class="card" data-cat="beauty">
+      <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9" alt="Makeup">
+      <p><b>Maybelline / Lakme Professional Makeup Kit</b></p>
+      <div class="price">₹1,299</div>
+      <button class="buy-btn" onclick="addToCart('Professional Makeup Kit', 1299)">Add to Cart</button>
     </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38" alt="Showpiece">
-      <div class="product-name">Wedding Decorative Showpiece Items</div>
-      <div class="price">899 Rupees</div>
-      <div class="discount">Top Rated</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
+    <div class="card" data-cat="beauty">
+      <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03" alt="Skincare">
+      <p><b>Mamaearth / Dot & Key Face & Body Care Set</b></p>
+      <div class="price">₹799</div>
+      <button class="buy-btn" onclick="addToCart('Face & Body Skincare Set', 799)">Add to Cart</button>
+    </div>
+    <div class="card" data-cat="beauty">
+      <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388" alt="Hair Care">
+      <p><b>L'Oreal / Tresemme Advanced Hair Care Kit</b></p>
+      <div class="price">₹699</div>
+      <button class="buy-btn" onclick="addToCart('Hair Care Kit', 699)">Add to Cart</button>
+    </div>
+    <div class="card" data-cat="beauty">
+      <img src="https://images.unsplash.com/photo-1608248597359-975ab02b4d96" alt="Hand Care">
+      <p><b>The Body Shop Hand Cream & Body Lotion</b></p>
+      <div class="price">₹499</div>
+      <button class="buy-btn" onclick="addToCart('Hand & Body Care Set', 499)">Add to Cart</button>
+    </div>
+
+    <!-- AC, Coolers & Fans (Cooling Appliances) -->
+    <div class="card" data-cat="cooling">
+      <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e" alt="AC">
+      <p><b>Voltas / LG 1.5 Ton Inverter Split AC</b></p>
+      <div class="price">₹32,999</div>
+      <button class="buy-btn" onclick="addToCart('Inverter Split AC', 32999)">Add to Cart</button>
+    </div>
+    <div class="card" data-cat="cooling">
+      <img src="https://images.unsplash.com/photo-1615873968403-89e0676297c5" alt="Cooler">
+      <p><b>Symphony Heavy Duty Desert Air Cooler</b></p>
+      <div class="price">₹6,499</div>
+      <button class="buy-btn" onclick="addToCart('Desert Air Cooler', 6499)">Add to Cart</button>
+    </div>
+    <div class="card" data-cat="cooling">
+      <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd" alt="Fan">
+      <p><b>Crompton / Havells High Speed Ceiling Fan</b></p>
+      <div class="price">₹2,199</div>
+      <button class="buy-btn" onclick="addToCart('High Speed Ceiling Fan', 2199)">Add to Cart</button>
+    </div>
+
+    <!-- Blankets & Rajai -->
+    <div class="card" data-cat="blankets">
+      <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2" alt="Blanket">
+      <p><b>Super Soft Winter Blanket & Rajai</b></p>
+      <div class="price">₹1,199</div>
+      <button class="buy-btn" onclick="addToCart('Winter Blanket & Rajai', 1199)">Add to Cart</button>
+    </div>
+
+    <!-- Trolley Bags & Purses -->
+    <div class="card" data-cat="bags">
+      <img src="https://images.unsplash.com/photo-1581557991964-125469da3b8a" alt="Trolley Bag">
+      <p><b>Large Travel Trolley Luggage Bag</b></p>
+      <div class="price">₹2,499</div>
+      <button class="buy-btn" onclick="addToCart('Trolley Luggage Bag', 2499)">Add to Cart</button>
+    </div>
+    <div class="card" data-cat="bags">
+      <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa" alt="Purse">
+      <p><b>Stylish Ladies Handbag & Wallet Purse</b></p>
+      <div class="price">₹799</div>
+      <button class="buy-btn" onclick="addToCart('Ladies Handbag Purse', 799)">Add to Cart</button>
+    </div>
+
+    <!-- Stationery & Photo Frames -->
+    <div class="card" data-cat="stationery">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Stationery">
+      <p><b>Complete School & Office Stationery Kit</b></p>
+      <div class="price">₹349</div>
+      <button class="buy-btn" onclick="addToCart('Stationery Kit', 349)">Add to Cart</button>
+    </div>
+    <div class="card" data-cat="stationery">
+      <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38" alt="Photo Frame">
+      <p><b>Decorative Wall Photo Frames Set</b></p>
+      <div class="price">₹699</div>
+      <button class="buy-btn" onclick="addToCart('Photo Frames Set', 699)">Add to Cart</button>
+    </div>
+
+    <!-- Innerwear -->
+    <div class="card" data-cat="innerwear">
+      <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27" alt="Innerwear">
+      <p><b>Ladies Premium Innerwear</b></p>
+      <div class="price">₹399</div>
+      <button class="buy-btn" onclick="addToCart('Ladies Innerwear', 399)">Add to Cart</button>
+    </div>
+
+    <!-- Baby Care -->
+    <div class="card" data-cat="baby">
+      <img src="https://images.unsplash.com/photo-1596464971569-34b7f583e7cf" alt="Diapers">
+      <p><b>Baby Care Diapers & Food Pack</b></p>
+      <div class="price">₹599</div>
+      <button class="buy-btn" onclick="addToCart('Baby Diapers Pack', 599)">Add to Cart</button>
     </div>
   </div>
 </div>
 
-<!-- Kitchen Accessories (Sinks, Taps, Stoves, Ovens) -->
-<div class="section">
-  <div class="section-title">Kitchen Accessories (Sinks, Taps, Gas Stoves, Ovens)</div>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a" alt="Kitchen Sink">
-      <div class="product-name">Stainless Steel Kitchen Sink & Tap</div>
-      <div class="price">2,499 Rupees</div>
-      <div class="discount">Heavy Duty</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1574269909862-7e1d70bb8078" alt="Gas Stove">
-      <div class="product-name">Automatic Gas Stove & Induction Cooktop</div>
-      <div class="price">3,299 Rupees</div>
-      <div class="discount">Mega Offer</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
-    </div>
+<!-- Bottom Profile, Cart & Orders Section -->
+<div class="bottom-panel">
+  <h3>🛒 Your Cart & Active Orders (Profile Bottom)</h3>
+  <div class="coupon-section">
+    <input type="text" id="couponInput" placeholder="Enter Coupon Code (e.g. ZIP50)">
+    <button onclick="applyCoupon()">Apply</button>
   </div>
+  <div id="cartSummary">Cart is empty. Add items above!</div>
+  <div style="margin-top: 15px; font-size: 12px; color: #aaa;">📦 Recent Orders: No active orders placed yet.</div>
 </div>
 
-<!-- Bathroom Accessories (Showers, Basins, Tanks) -->
-<div class="section">
-  <div class="section-title">Bathroom Accessories (Showers, Basins, Water Tanks)</div>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1584466977773-e625c37cdd50" alt="Basin">
-      <div class="product-name">Designer Wash Basin & Luxury Shower Set</div>
-      <div class="price">1,999 Rupees</div>
-      <div class="discount">Best Quality</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101" alt="Water Tank">
-      <div class="product-name">1000 Litre Syntex Water Storage Tank</div>
-      <div class="price">6,500 Rupees</div>
-      <div class="discount">Direct Delivery</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
-    </div>
-  </div>
-</div>
+<script>
+  // Banner Sliding Logic
+  let currentSlide = 0;
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % 10;
+    document.getElementById('sliderTrack').style.transform = `translateX(-${currentSlide * 10}%)`;
+  }, 3000);
 
-<!-- Fashion, Watches & Shoes -->
-<div class="section">
-  <div class="section-title">Fashion, Watches & Shoes</div>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Watch">
-      <div class="product-name">Luxury Hand Wrist Watch</div>
-      <div class="price">1,499 Rupees</div>
-      <div class="discount">Trending</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105" alt="Clothes">
-      <div class="product-name">Designer Festive Outfits & Shoes</div>
-      <div class="price">2,199 Rupees</div>
-      <div class="discount">Special Deal</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
-    </div>
-  </div>
-</div>
+  // Search & Recent History Logic
+  let recentSearches = [];
+  function handleSearch(event) {
+    let query = document.getElementById('searchInput').value;
+    if (event.key === 'Enter' && query.trim() !== '') {
+      recentSearches.push(query);
+      document.getElementById('recentText').innerText = "Recent Searches: " + recentSearches.join(', ');
+      document.getElementById('searchInput').value = '';
+    }
+  }
 
-<!-- Bike Parts & Tools (T-Kit, Spanners, Spare Parts) -->
-<div class="section">
-  <div class="section-title">Bike Parts & Tools (T-Kit, Spanners, Spare Parts)</div>
-  <div class="grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758" alt="Tools">
-      <div class="product-name">Professional Mechanic T-Kit & Spanners Set</div>
-      <div class="price">1,299 Rupees</div>
-      <div class="discount">Pro Kit</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193c" alt="Bike Parts">
-      <div class="product-name">Global Imported Bike & Scooter Spare Parts</div>
-      <div class="price">899 Rupees</div>
-      <div class="discount">Rare Parts</div>
-      <button class="buy-btn" onclick="alert('Added to Cart!')">Add to Cart</button>
-    </div>
-  </div>
-</div>
+  function clearAllSearches() {
+    recentSearches = [];
+    document.getElementById('recentText').innerText = "Recent Searches: None";
+    document.getElementById('searchInput').value = '';
+  }
 
-<div class="footer">
-  Zip India Mart | The Ultimate Global Megastore | Powered by Mohd.Fehed
-</div>
+  // Image Search Simulation (Camera/Gallery)
+  function searchByImage(input) {
+    if (input.files && input.files[0]) {
+      alert("Photo uploaded successfully! Searching matching products across Zip India Mart...");
+      document.getElementById('recentText').innerText = "Recent Searches: [Image Visual Search]";
+    }
+  }
+
+  // Category Filter
+  function filterCat(cat, element) {
+    document.querySelectorAll('.cat-item').forEach(el => el.classList.remove('active'));
+    element.classList.add('active');
+    let cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // Cart & Coupon System
+  let cart = [];
+  let discountApplied = 0;
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCartDisplay();
+  }
+
+  function updateCartDisplay() {
+    let summary = document.getElementById('cartSummary');
+    if (cart.length === 0) {
+      summary.innerHTML = "Cart is empty. Add items above!";
+      return;
+    }
+    let total = cart.reduce((sum, item) => sum + item.price, 0);
+    let finalTotal = total - discountApplied;
+    let html = "<ul>";
+    cart.forEach(item => { html += `<li>${item.name} - ₹${item.price}</li>`; });
+    html += `</ul><b>Total Amount: ₹${finalTotal}</b>`;
+    summary.innerHTML = html;
+  }
+
+  function applyCoupon() {
+    let code = document.getElementById('couponInput').value.trim().toUpperCase();
+    if (code === "ZIP50" || code === "INDIA50") {
+      discountApplied = 50;
+      alert("Coupon Applied! ₹50 discount given.");
+      updateCartDisplay();
+    } else {
+      alert("Invalid Coupon Code! Try 'ZIP50'");
+    }
+  }
+</script>
 
 </body>
-</html>
+                                                                                               </html>
+                                                                                               
