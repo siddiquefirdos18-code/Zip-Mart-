@@ -286,4 +286,284 @@
       </div>
     </div>
 
-    <!-- FASHION: N
+    <!-<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zip India Mart - Ultimate Mega Megastore</title>
+  <style>
+    body { background-color: #121212; color: #ffffff; font-family: sans-serif; margin: 0; padding-bottom: 70px; }
+    header { background-color: #000; padding: 15px; text-align: center; font-size: 20px; font-weight: bold; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center; }
+    .coin-badge { font-size: 12px; background: #ff9f00; color: #000; padding: 4px 8px; border-radius: 12px; font-weight: bold; }
+    
+    .search-container { padding: 12px; text-align: center; background: #181818; }
+    .search-bar { width: 90%; max-width: 500px; padding: 12px; background: #1e1e1e; border: 1px solid #555; color: #fff; border-radius: 25px; outline: none; text-align: center; }
+    
+    /* Smooth Scrollable Banners */
+    .banner-wrapper { width: 100%; overflow-x: auto; white-space: nowrap; scrollbar-width: none; background: #121212; padding: 10px 0; }
+    .banner-wrapper::-webkit-scrollbar { display: none; }
+    .banner-container { display: inline-flex; gap: 10px; padding: 0 15px; }
+    .banner-card { min-width: 280px; height: 120px; border-radius: 10px; overflow: hidden; position: relative; display: inline-block; border: 1px solid #444; }
+    .banner-card img { width: 100%; height: 100%; object-fit: cover; }
+    .banner-text { position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.7); padding: 4px 8px; font-size: 12px; font-weight: bold; border-radius: 4px; color: #ff9f00; }
+
+    /* Fixed Category Circles Scrolling */
+    .cat-wrapper { width: 100%; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 10px 0; background: #181818; border-bottom: 1px solid #333; }
+    .cat-wrapper::-webkit-scrollbar { display: none; }
+    .cat-container { display: inline-flex; gap: 12px; padding: 0 15px; }
+    .cat-circle { width: 68px; height: 68px; border-radius: 50%; border: 3px solid #ff9f00; cursor: pointer; overflow: hidden; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; background: #000; flex-shrink: 0; text-align: center; }
+    .cat-circle img { width: 100%; height: 100%; object-fit: cover; }
+    .cat-name { font-size: 7px; margin-top: 2px; color: #fff; font-weight: bold; text-align: center; width: 100%; overflow: hidden; text-overflow: ellipsis; }
+
+    /* 2-Column Product Grid Layout */
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; }
+    .card { background: #1e1e1e; padding: 8px; border-radius: 10px; text-align: center; border: 1px solid #333; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+    .img-container { width: 100%; height: 120px; border-radius: 6px; overflow: hidden; background: #fff; display: flex; align-items: center; justify-content: center; }
+    .card img { width: 100%; height: 100%; object-fit: cover; }
+    .product-title { font-size: 11px; margin: 6px 0 4px 0; height: 28px; overflow: hidden; font-weight: 600; line-height: 1.2; }
+    .price { color: #ff9f00; font-weight: bold; font-size: 13px; margin: 4px 0; }
+    
+    .qty-control { display: flex; justify-content: center; align-items: center; gap: 6px; margin-bottom: 6px; }
+    .qty-btn { background: #333; color: white; border: none; padding: 2px 8px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 11px; }
+    .qty { font-size: 12px; font-weight: bold; }
+    
+    .btn-group { display: flex; gap: 4px; margin-top: auto; }
+    .add-btn { background: #ff9f00; color: #000; border: none; padding: 6px 4px; width: 100%; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 10px; }
+    .buynow-btn { background: #28a745; color: #fff; border: none; padding: 6px 4px; width: 100%; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 10px; }
+    .customize-btn { background: #444; color: #fff; border: none; padding: 4px; width: 100%; border-radius: 4px; font-size: 9px; cursor: pointer; margin-top: 4px; }
+
+    /* Bottom Navigation Bar */
+    .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #000; display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid #333; z-index: 1000; }
+    .nav-item { text-align: center; color: #aaa; cursor: pointer; font-size: 11px; }
+    .nav-item.active { color: #ff9f00; }
+    .nav-item div { font-size: 18px; margin-bottom: 2px; }
+
+    /* Sections / Pages */
+    .page-section { display: none; padding: 15px; }
+    .page-section.active { display: block; }
+
+    /* Cart & Checkout Styling */
+    .cart-box, .login-box { background: #1e1e1e; padding: 15px; border-radius: 10px; margin-bottom: 15px; border: 1px solid #333; }
+    .checkout-btn { background: #28a745; color: #fff; border: none; padding: 12px; width: 100%; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; margin-top: 10px; }
+    .input-field { width: 100%; padding: 10px; margin: 8px 0; background: #121212; border: 1px solid #444; color: #fff; border-radius: 6px; box-sizing: border-box; }
+    .social-login { display: flex; gap: 10px; margin-top: 10px; }
+    .social-btn { flex: 1; padding: 10px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 12px; }
+    .google-btn { background: #db4437; color: #fff; }
+    .fb-btn { background: #3b5998; color: #fff; }
+  </style>
+</head>
+<body>
+
+<header>
+  <span>Zip India Mart</span>
+  <div class="coin-badge">🪙 <span id="userCoins">100</span> Coins</div>
+</header>
+
+<!-- HOME PAGE -->
+<div id="homePage" class="page-section active">
+  <div class="search-container">
+    <input type="text" class="search-bar" placeholder="Search apparel, spares, electronics, kitchen, decor..." id="searchInput" onkeyup="searchProducts()">
+  </div>
+
+  <!-- Promotional Banners Slider -->
+  <div class="banner-wrapper">
+    <div class="banner-container">
+      <div class="banner-card">
+        <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf" alt="Toys">
+        <div class="banner-text">Mega Toy Cars & R/C Vehicles Collection</div>
+      </div>
+      <div class="banner-card">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b" alt="Fashion">
+        <div class="banner-text">Massive Fashion Store: Men, Women, Kids & Babies!</div>
+      </div>
+      <div class="banner-card">
+        <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147" alt="Electronics">
+        <div class="banner-text">Electronics, Mobiles, ACs, Fans & Gadgets</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scrollable Categories Container -->
+  <div class="cat-wrapper">
+    <div class="cat-container">
+      <div class="cat-circle" onclick="filter('all')"><img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634"><span class="cat-name">ALL</span></div>
+      <div class="cat-circle" onclick="filter('toys')"><img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf"><span class="cat-name">TOY CARS</span></div>
+      <div class="cat-circle" onclick="filter('fashion')"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b"><span class="cat-name">FASHION</span></div>
+      <div class="cat-circle" onclick="filter('spares')"><img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b"><span class="cat-name">SPARES</span></div>
+      <div class="cat-circle" onclick="filter('kitchen')"><img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f"><span class="cat-name">KITCHEN</span></div>
+      <div class="cat-circle" onclick="filter('bathroom')"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a"><span class="cat-name">BATHROOM</span></div>
+      <div class="cat-circle" onclick="filter('electronics')"><img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147"><span class="cat-name">ELECTRONICS</span></div>
+      <div class="cat-circle" onclick="filter('decor')"><img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38"><span class="cat-name">DECOR & WATCH</span></div>
+    </div>
+  </div>
+
+  <div class="grid" id="productGrid">
+    
+    <!-- TOY CARS (Only Toy Cars, No Real Cars!) -->
+    <div class="card" data-cat="toys" data-name="rc toy car remote control sports car miniature vehicle">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf" alt="RC Toy Car"></div>
+      <div class="product-title">Kids Remote Control Toy Sports Car (Miniature)</div>
+      <div class="price" data-price="899">₹899</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="toys" data-name="diecast metal toy car model pullback toy">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1581235720704-06d3acfcb36f" alt="Diecast Toy Car"></div>
+      <div class="product-title">Diecast Metal Pull-Back Toy Car Model for Kids</div>
+      <div class="price" data-price="399">₹399</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- VEHICLE SPARE PARTS (Bike, Scooty, Car, Truck) -->
+    <div class="card" data-cat="spares" data-name="scooty front cowl visor spare parts">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39" alt="Scooty Spares"></div>
+      <div class="product-title">Scooty / Motorcycle Front Visor & Cowl Spare Part</div>
+      <div class="price" data-price="850">₹850</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="spares" data-name="car truck spare parts brake pads filters mirror">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b" alt="Car Truck Spares"></div>
+      <div class="product-title">Car & Heavy Truck Universal Spare Parts & Filters</div>
+      <div class="price" data-price="1299">₹1,299</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- FASHION: MEN, WOMEN, BOYS, GIRLS, BABIES, PERFUMES, ZERO-POWER GLASSES -->
+    <div class="card" data-cat="fashion" data-name="zero power fashion glasses stylish frame fake glasses">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083" alt="Zero Power Glasses"></div>
+      <div class="product-title">Stylish Zero-Power Fashion Glasses / Shutter Frames</div>
+      <div class="price" data-price="349">₹349</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="fashion" data-name="luxury perfume body spray fragrance cosmetics">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f" alt="Perfume"></div>
+      <div class="product-title">Luxury Long-Lasting Perfume & Fragrance Spray</div>
+      <div class="price" data-price="599">₹599</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="fashion" data-name="mens casual shirt trousers jeans clothing">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf" alt="Mens Wear"></div>
+      <div class="product-title">Men's Casual Cotton Shirt & Denim Jeans Combo</div>
+      <div class="price" data-price="899">₹899</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+      <button class="customize-btn" onclick="customizeItem('Mens Wear')">Select Size/Color</button>
+    </div>
+
+    <div class="card" data-cat="fashion" data-name="womens ladies kurtis ethnic wear gown sarees">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb" alt="Womens Wear"></div>
+      <div class="product-title">Women's Designer Kurti, Ethnic Wear & Gown</div>
+      <div class="price" data-price="799">₹799</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+      <button class="customize-btn" onclick="customizeItem('Womens Wear')">Select Size/Color</button>
+    </div>
+
+    <div class="card" data-cat="fashion" data-name="boys girls kids teens clothing outfits">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1503944583220-74d8964ffc32" alt="Kids Wear"></div>
+      <div class="product-title">Boys & Girls Stylish Party Wear Outfit (Teens)</div>
+      <div class="price" data-price="649">₹649</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- KITCHEN (Bone China, Dinner Sets, Glass Bottles) -->
+    <div class="card" data-cat="kitchen" data-name="bone china crockery dinner set chini ke bartan">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb" alt="Bone China Dinner Set"></div>
+      <div class="product-title">Fine Bone China Crockery Dinner Set (Chini ke Bartan)</div>
+      <div class="price" data-price="1599">₹1,599</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="kitchen" data-name="glass water bottle glass set juice glass">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1544816155-12df9643f363" alt="Glass Bottles"></div>
+      <div class="product-title">Premium Glass Water Bottles & Glassware Set</div>
+      <div class="price" data-price="499">₹499</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- BATHROOM ESSENTIALS -->
+    <div class="card" data-cat="bathroom" data-name="bathroom set bucket mug soap dispenser holder">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a" alt="Bathroom Set"></div>
+      <div class="product-title">Complete Bathroom Accessory Set (Bucket, Mug, Holders)</div>
+      <div class="price" data-price="699">₹699</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- ELECTRONICS (TV, AC, Cooler, Fan, Laptop, PC, Mobile, Earphones, AirPods) -->
+    <div class="card" data-cat="electronics" data-name="smart tv led television home theater">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1" alt="Smart TV"></div>
+      <div class="product-title">43-inch Smart LED TV & Home Entertainment</div>
+      <div class="price" data-price="18999">₹18,999</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="electronics" data-name="air conditioner ac inverter split ac">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1615873968403-89e068629265" alt="AC"></div>
+      <div class="product-title">1.5 Ton Inverter Split Air Conditioner (AC)</div>
+      <div class="price" data-price="32999">₹32,999</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty(this, -1)">-</button><span class="qty">1</span><button class="qty-btn" onclick="changeQty(this, 1)">+</button></div>
+      <div class="btn-group">
+        <button class="add-btn" onclick="addToCart(this)">Add</button>
+        <button class="buynow-btn" onclick="buyNow(this)">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="card" data-cat="electronics" data-name="air cooler desert cooler fan">
+      <div class="img-container"><img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3" alt="Cooler & Fan"></div>
+      <div class="product-title">High Air Delivery Desert Cooler & Ceiling Fan</div>
+      <div class="price" data-price="4499">₹4,499</div>
+      <div class="qty-control"><button class="qty-btn" onclick="changeQty- FASHION: N
